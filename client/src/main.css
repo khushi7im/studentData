@@ -1,0 +1,45 @@
+.wrapper {
+  /* border: 2px solid red; */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background-color: rgb(207, 167, 211);
+}
+.addButton {
+  display: flex;
+  justify-content: end;
+}
+
+.content {
+  /* border: 2px solid green; */
+  height: auto;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+thead,
+tr {
+  padding: 10px 60px;
+}
+thead {
+  background-color: rgb(126, 126, 216);
+}
+td,
+th {
+  border: 1px solid rgb(177, 212, 202);
+  padding: 10px 60px 10px 10px;
+  text-align: left;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 550px;
+  height: 27px;
+  margin: 10px 0px;
+  padding: 7px 10px;
+  font-size: larger;
+}
