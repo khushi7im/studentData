@@ -35,26 +35,27 @@ const Student = () => {
         </div>
         <table>
           <thead>
-            <th>Fullname</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <td>Fullname</td>
+            <td>Email</td>
+            <td>Actions</td>
           </thead>
 
-          {student.map((data) => (
-            <tr>
-              <td>
-                {data.Firstname} {data.Lastname}
-              </td>
-              <td>{data.email}</td>
-              <td>
-                <Link to={`update/${data.ID}`}>
-                  <button>Update</button>
-                </Link>
+          {Array.isArray(student) &&
+            student.map((data) => (
+              <tr>
+                <td>
+                  {data.Firstname} {data.Lastname}
+                </td>
+                <td>{data.email}</td>
+                <td>
+                  <Link to={`update/${data.ID}`}>
+                    <button>Update</button>
+                  </Link>
 
-                <button onClick={(e) => HandleDelete(data.ID)}>Delete</button>
-              </td>
-            </tr>
-          ))}
+                  <button onClick={(e) => HandleDelete(data.ID)}>Delete</button>
+                </td>
+              </tr>
+            ))}
         </table>
       </div>
     </div>

@@ -1,17 +1,24 @@
 const express = require("express");
 const cors = require("cors");
-const mysql = require("mysql");
+const mysql = require("mysql2");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "vashisth2006",
-  database: "student",
+const db = mysql.createPool({
+  host: "mysql-3db8a027-vishu-1019.a.aivencloud.com", // Aiven MySQL Host
+  port: 26486, // Port number
+  user: "avnadmin", // Username
+  password: process.env.DB_PASSWORD, // Password
+  database: "studentData", // Database name
+  // ssl: {
+  //   // SSL mode required
+  //   rejectUnauthorized: true,
+  // },
 });
 
 app.get("/", (req, res) => {
